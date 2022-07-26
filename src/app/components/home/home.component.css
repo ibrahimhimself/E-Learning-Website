@@ -1,0 +1,17 @@
+.btn-outline-warning:hover
+{
+    color: white !important;
+}
+
+
+
+.carousel-control:hover
+{
+    color: #ffc107 !important;
+}
+
+.btn-warning:hover
+{
+    background-color: #fff !important;
+    border-color: #fff !important;
+}

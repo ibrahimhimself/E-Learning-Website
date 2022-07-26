@@ -1,36 +1,45 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" width="250px" class="me-5">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link fs-5" routerLinkActive="active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link fs-5" routerLinkActive="active" href="#">about</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
+            <a class="nav-link dropdown-toggle fs-5"  data-bs-toggle="dropdown" aria-expanded="false" href="#">Pages</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown nav-link text-light" href="#">ADVISORS</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown nav-link text-light" href="#">ADVISORS Details</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle fs-5" data-bs-toggle="dropdown" aria-expanded="false" href="#">Courses</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown nav-link text-light" href="#">Course 01</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown nav-link text-light" href="#">Course 02</a></li>
+              <li><hr class="dropdown-divider bg-light"></li>
+              <li><a class="dropdown nav-link text-light" href="#">Course 03</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link fs-5" routerLinkActive="active" href="#">Contact</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-warning me-3" type="submit">Signup</button>
+          <button class="btn btn-outline-warning" type="submit">Login</button>
         </form>
       </div>
     </div>
-  </nav>
+</nav>
