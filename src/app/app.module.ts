@@ -16,6 +16,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AdvisorsComponent } from './components/advisors/advisors.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CoursesComponent,
     ContactUsComponent,
     MainLayoutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AdvisorsComponent
   ],
   imports: [
     BrowserModule,
