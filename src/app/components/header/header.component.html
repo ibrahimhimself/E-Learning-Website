@@ -9,31 +9,19 @@
       <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
           <li class="nav-item">
-            <a class="nav-link fs-5" routerLinkActive="active" aria-current="page" href="#">Home</a>
+            <a class="nav-link fs-5" routerLink="/home" routerLinkActive="active">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" routerLinkActive="active" href="#">about</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fs-5"  data-bs-toggle="dropdown" aria-expanded="false" href="#">Pages</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown nav-link text-light" href="#">ADVISORS</a></li>
-              <li><hr class="dropdown-divider bg-light"></li>
-              <li><a class="dropdown nav-link text-light" href="#">ADVISORS Details</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle fs-5" data-bs-toggle="dropdown" aria-expanded="false" href="#">Courses</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown nav-link text-light" href="#">Course 01</a></li>
-              <li><hr class="dropdown-divider bg-light"></li>
-              <li><a class="dropdown nav-link text-light" href="#">Course 02</a></li>
-              <li><hr class="dropdown-divider bg-light"></li>
-              <li><a class="dropdown nav-link text-light" href="#">Course 03</a></li>
-            </ul>
+            <a class="nav-link fs-5" routerLink="/about" routerLinkActive="active">about</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" routerLinkActive="active" href="#">Contact</a>
+            <a class="nav-link fs-5" routerLink="/advisors" routerLinkActive="active">Advisors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" routerLink="/courses" routerLinkActive="active">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5" routerLink="/contact-us" routerLinkActive="active">Contact</a>
           </li>
         </ul>
         <form class="d-flex" role="search">

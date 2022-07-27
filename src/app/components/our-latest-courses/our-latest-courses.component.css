@@ -1,0 +1,37 @@
+.categorie-item {
+	margin-bottom: 34px;
+	background: #edf4f6;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.categorie-item .ci-thumb {
+	-webkit-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.categorie-item .ci-text {
+	padding: 40px 35px;
+}
+
+.categorie-item .ci-text h5 {
+	margin-bottom: 5px;
+}
+
+.categorie-item .ci-text span {
+	font-size: 18px;
+	font-weight: 600;
+	color: #002147;
+}
+
+.categorie-item:hover {
+	background: #ffc107;
+}
+
+.categorie-item:hover .ci-text h5,
+.categorie-item:hover .ci-text p,
+.categorie-item:hover .ci-text span {
+	color: #fff;
+}
