@@ -1,0 +1,21 @@
+a
+{
+    text-decoration: none;
+    color: #002147;
+}
+
+a:hover
+{
+    color: #ffc107;
+}
+
+.card
+{
+    border-bottom: 5px solid #ffc107;
+}
+
+.card:hover
+{
+    border-bottom: 5px solid #002147;
+    transition: all ease-in-out .40s;
+}

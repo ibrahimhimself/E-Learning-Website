@@ -1,0 +1,21 @@
+.dropdown-menu
+{
+    padding: 0!important;
+    background-color: #002147 !important;
+}
+
+.btn-outline-warning:hover
+{
+    color: white !important;
+}
+
+.nav-link:hover
+{
+    color: #ffc107 !important;
+}
+
+/* .active
+{
+    color: #ffc107 !important;
+
+} */

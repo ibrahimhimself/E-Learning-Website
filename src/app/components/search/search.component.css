@@ -1,0 +1,60 @@
+.search-warp {
+	background: #002147;
+	padding-top: 60px;
+	padding-bottom: 50px;
+}
+
+.search-warp .section-title {
+	margin-bottom: 30px;
+}
+
+.course-search-form input[type=text],
+.course-search-form input[type=email] {
+	height: 56px;
+	width: 36.6%;
+	padding: 0 30px;
+	margin-right: 18px;
+	float: left;
+	border: none;
+	font-size: 14px;
+	background: #edf4f6;
+}
+
+.search-section.ss-other-page {
+	margin-top: -85px;
+}
+
+.search-section.ss-other-page .search-warp {
+	position: relative;
+	padding: 60px 0;
+}
+
+.search-section.ss-other-page .section-title {
+	margin-bottom: 0;
+}
+
+.search-section.ss-other-page .section-title h2 {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 100%;
+	font-size: 24px;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.search-section.ss-other-page .section-title h2 span {
+	display: inline-block;
+	background: #ffc107;
+	padding: 20px 60px 10px;
+}
+
+.search-section.ss-other-page .course-search-form {
+	background-color: transparent;
+	padding: 0;
+}
+
+.search-section.ss-other-page .course-search-form input[type=text]:focus,
+.search-section.ss-other-page .course-search-form input[type=email]:focus {
+	border-bottom: none;
+}
