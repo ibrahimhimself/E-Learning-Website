@@ -2,7 +2,7 @@
 
 /* -------------------------------- */
 .categorie-item {
-	margin-bottom: 34px;
+	margin-bottom: 3px;
 	background: #edf4f6;
 	-webkit-transition: all 0.4s;
 	-o-transition: all 0.4s;
@@ -16,7 +16,7 @@
 }
 
 .categorie-item .ci-text {
-	padding: 25px;
+	padding: 10px;
 }
 
 .categorie-item .ci-text h5 {
@@ -38,6 +38,11 @@ a{
   text-decoration: none;
 	color: #002147;
 
+}
+
+.categorie-item p{
+  font-size: 13px ;
+  margin: 0;
 }
 
 /* img{
