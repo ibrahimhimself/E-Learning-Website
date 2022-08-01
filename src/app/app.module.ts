@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-import { OurCategoriesComponent } from './components/our-categories/our-categories.component';
+// import { OurCategoriesComponent } from './components/our-categories/our-categories.component;
 import { OurExperienceAdvisorsComponent } from './components/our-experience-advisors/our-experience-advisors.component';
 import { WhatOurStudentsSayComponent } from './components/what-our-students-say/what-our-students-say.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,8 +15,15 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdvisorsComponent } from './components/advisors/advisors.component';
+
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CourseContentComponent } from './components/course-content/course-content.component';
+import { CourseSubCategoryComponent } from './components/course-sub-category/course-sub-category.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +31,6 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     HeaderComponent,
     AboutUsComponent,
-    OurCategoriesComponent,
     OurExperienceAdvisorsComponent,
     WhatOurStudentsSayComponent,
     FooterComponent,
@@ -33,7 +39,11 @@ import { RouterModule } from '@angular/router';
     ContactUsComponent,
     MainLayoutComponent,
     NotFoundComponent,
-    AdvisorsComponent
+    AdvisorsComponent,
+    LoginComponent,
+    RegisterComponent,
+    CourseContentComponent,
+    CourseSubCategoryComponent
   ],
   imports: [
     BrowserModule,

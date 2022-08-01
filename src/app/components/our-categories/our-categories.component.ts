@@ -12,26 +12,26 @@ import { categoryServiceService } from 'src/app/service/category-service.service
 export class OurCategoriesComponent implements OnInit {
 
   courses:Courses|undefined = undefined;
-  coursesList:Courses[];
-  coursesCat:CoursesCat[];
+  // coursesList:Courses[];
+  // coursesCat:CoursesCat[];
   constructor(private categoryService:categoryServiceService, private router:Router) {
 
-    this.coursesList = this.categoryService.coursesList;
-    this.coursesCat = this.categoryService.coursesCat;
+    // this.coursesList = this.categoryService.coursesList;
+    // this.coursesCat = this.categoryService.coursesCat;
   }
 
   ngOnInit(): void {
   }
 
 
-  searchByCourseCat(courseItem:string){
-    let foundedCourse = this.categoryService.searchCourseByCat(courseItem);
-    if(foundedCourse)
-    {
-      this.courses = foundedCourse;
-    }
-    else{
-      alert("This Course Not Founded")
-    }
-  }
+  // searchByCourseCat(courseItem:string){
+  //   let foundedCourse = this.categoryService.searchCourseByCat(courseItem);
+  //   if(foundedCourse)
+  //   {
+  //     this.courses = foundedCourse;
+  //   }
+  //   else{
+  //     alert("This Course Not Founded")
+  //   }
+  // }
 }
