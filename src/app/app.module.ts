@@ -17,6 +17,10 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdvisorsComponent } from './components/advisors/advisors.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CourseContentComponent } from './components/course-content/course-content.component';
+import { CourseSubCategoryComponent } from './components/course-sub-category/course-sub-category.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { AdvisorsComponent } from './components/advisors/advisors.component';
     ContactUsComponent,
     MainLayoutComponent,
     NotFoundComponent,
-    AdvisorsComponent
+    AdvisorsComponent,
+    LoginComponent,
+    RegisterComponent,
+    CourseContentComponent,
+    CourseSubCategoryComponent
   ],
   imports: [
     BrowserModule,

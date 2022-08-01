@@ -1,0 +1,13 @@
+img{
+  width: 150px;
+  height: 80px;
+}
+
+
+.required-field{
+  color: red;
+}
+
+.vh-100 , .gradient-custom{
+  min-height: 150vh;
+}
