@@ -16,7 +16,7 @@
 	padding: 40px 35px;
 }
 
-.categorie-item .ci-text h5 {
+.categorie-item .ci-text h4 {
 	margin-bottom: 5px;
 }
 
@@ -30,8 +30,9 @@
 	background: #ffc107;
 }
 
-.categorie-item:hover .ci-text h5,
+.categorie-item:hover .ci-text h4,
 .categorie-item:hover .ci-text p,
 .categorie-item:hover .ci-text span {
 	color: #fff;
 }
+
