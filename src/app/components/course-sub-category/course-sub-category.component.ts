@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CoursesCat } from 'src/app/models/courses-cat';
 import { IcoursesSubCategories } from 'src/app/models/icourses-sub-categories';
+import { categoryServiceService } from 'src/app/service/category-service.service';
 
 @Component({
   selector: 'app-course-sub-category',
@@ -8,28 +11,40 @@ import { IcoursesSubCategories } from 'src/app/models/icourses-sub-categories';
 })
 export class CourseSubCategoryComponent implements OnInit {
 
-  categoryName: string = 'Programming';
-  categoryDiscription: string = 'Programming is the implementation of logic to facilitate specified computing operations and functionality. It occurs in one or more languages, which differ by application, domain and programming model.';
+  subCatList: IcoursesSubCategories[] = [];
+  subCat:any|undefined = undefined;
+  catIDList:any = [];
+  currentcatID:number = 0;
+  currentIndex:number = 0;
 
-  // IT Development category ID => 1
-
-
-  courseList: IcoursesSubCategories[];
-  // courseList: Icourses = {
-  //   courseID: 1, courseName:'HTML', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'
-  // };
-  constructor() {
-    this.courseList = [
-      {courseID: 1, courseName:'HTML 1', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'},
-      {courseID: 1, courseName:'HTML 2', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'},
-      {courseID: 1, courseName:'HTML 3', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'},
-      {courseID: 1, courseName:'HTML 4', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'},
-
-
-    ]
+  constructor(private categoryService:categoryServiceService,
+              private router:Router, 
+              private activeRouter:ActivatedRoute,
+    ) {
+    
   }
 
   ngOnInit(): void {
+    
+    this.categoryService.getAllSubCategories().subscribe(subCategoryList => {
+      this.subCatList = subCategoryList;
+    })
+
+
+
+    // this.catIDList =  this.categoryService.getAllCategories();
+    // this.activeRouter.paramMap.subscribe(paramMap=>{
+    //   this.currentcatID=(paramMap.get('itemID'))?Number(paramMap.get('itemID')):0;
+    //   let foundedProduct = this.categoryService.getSubCategoryByCatID(this.currentcatID);
+    //   if(foundedProduct){
+    //       this.subCat = foundedProduct;
+    //     }
+    //     else
+    //     {
+    //       alert('Product Not Founded');
+    //       // this.location.back();
+    //     }
+    // })
   }
 
 }

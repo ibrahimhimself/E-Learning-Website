@@ -7,7 +7,3 @@ img{
 .required-field{
   color: red;
 }
-
-.vh-100 , .gradient-custom{
-  min-height: 150vh;
-}

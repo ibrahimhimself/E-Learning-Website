@@ -1,10 +1,11 @@
 import { Icon } from "@fortawesome/fontawesome-svg-core";
 
 export interface IcoursesSubCategories {
-  courseID?: number;
-  courseName?: string;
-  catID?: number;
-  imgURL?: string;
-  courseContentURL?: string;
-  courseRating?: Icon;
+  id: number;
+  name: string;
+  category_id?: number;
+  image?: string;
+  status?:string,
+  created_at?:Date,
+  updated_at?:Date
 }

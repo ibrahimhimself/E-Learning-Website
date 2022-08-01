@@ -1,3 +1,9 @@
+.categories-section
+{
+	background-color: #002147;
+	padding: 50px 0;
+}
+
 .categorie-item {
 	margin-bottom: 34px;
 	background: #edf4f6;
@@ -16,7 +22,7 @@
 	padding: 40px 35px;
 }
 
-.categorie-item .ci-text h4 {
+.categorie-item .ci-text h5 {
 	margin-bottom: 5px;
 }
 
@@ -30,7 +36,7 @@
 	background: #ffc107;
 }
 
-.categorie-item:hover .ci-text h4,
+.categorie-item:hover .ci-text h5,
 .categorie-item:hover .ci-text p,
 .categorie-item:hover .ci-text span {
 	color: #fff;

@@ -1,18 +1,19 @@
 <section class="categories-section spad">
     <div class="container">
         <div class="section-title text-light text-center">
-            <h2>Our Course Categories</h2>
+            <h2 class="fw-bold">Our Course Categories</h2>
             <p class="w-75 m-auto mb-5 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
         </div>
         <div class="row">
             
             <div class="col-lg-4 col-md-6" *ngFor="let item of coursesCat">
-                <div class="categorie-item">
-                    <img src="{{item.imgURL}}" class="ci-thumb set-bg w-100">
+                <div class="categorie-item p-3">
+                    <img src="http://127.0.0.1:8000/assets/dist/img/Category-images/{{item.image}}" class="ci-thumb set-bg w-100">
                     <div class="ci-text">
-                        <h4 class="fw-bold">{{item.name}}</h4>
-                        <span>{{item.contain}} Courses</span>
-                        <a href="#" class="btn btn-outline-primary float-end">View Courses</a>
+                        <h5 class="fw-bold">{{item.name}}</h5>
+                        <span class="d-block">{{item.slug}} Courses</span>
+                        <a class="btn btn-outline-primary mt-2 float-end" routerLink="/CourseSubCategory">View Sub Category</a>
+                        <!-- <a class="btn btn-outline-primary mt-2 float-end" [routerLink]="['/CourseSubCategory',item.id]">View Sub Category</a> -->
                     </div>
                 </div>
             </div>

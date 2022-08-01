@@ -13,26 +13,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
-// const routes: Routes = [
-//   {path:'', component:MainLayoutComponent , children:[
-//     {path:'contact-us', component: ContactUsComponent},
-//     {path:'home', component: HomeComponent},
-//     // {path:'advisors', component: },
-//     {path:'courses', component: CoursesComponent},
-//   ]},
-//     {path:'**', component: NotFoundComponent},
-// ];
-
 const routes: Routes = [
       {path:'', redirectTo: '/home', pathMatch: 'full'}, // Default path
       {path:'home', component: HomeComponent},
       {path:'about', component: AboutUsComponent},
-      {path:'Advisors', component: AdvisorsComponent},
       {path:'courses', component: CoursesComponent},
       {path:'advisors', component: AdvisorsComponent},
-      {path:'aboutUs', component: AboutUsComponent},
       {path:'ourCategories', component: OurCategoriesComponent},
-      {path:'**', component: NotFoundComponent},
       {path:'contact-us', component: ContactUsComponent},
       {path:'Signup', component: RegisterComponent},
       {path:'Login', component: LoginComponent},

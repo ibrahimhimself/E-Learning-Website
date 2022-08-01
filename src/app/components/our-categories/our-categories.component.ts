@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Courses } from 'src/app/models/courses';
 import { CoursesCat } from 'src/app/models/courses-cat';
@@ -9,20 +9,30 @@ import { categoryServiceService } from 'src/app/service/category-service.service
   templateUrl: './our-categories.component.html',
   styleUrls: ['./our-categories.component.css']
 })
-export class OurCategoriesComponent implements OnInit {
+export class OurCategoriesComponent implements OnInit , OnChanges {
 
-  courses:Courses|undefined = undefined;
-  // coursesList:Courses[];
-  // coursesCat:CoursesCat[];
-  constructor(private categoryService:categoryServiceService, private router:Router) {
+  coursesCat:any= [];
+  constructor(private categoryService:categoryServiceService) {
 
-    // this.coursesList = this.categoryService.coursesList;
-    // this.coursesCat = this.categoryService.coursesCat;
+  }
+
+  ngOnChanges(): void {
+    
   }
 
   ngOnInit(): void {
+
+    this.categoryService.getAllCategories().subscribe(catList => {
+      this.coursesCat = catList;
+    })
+
   }
 
+  // subCategory(itemID:number){
+  //   this.categoryService.getSubCategoryByCatID(itemID).subscribe(catList => {
+  //     this.coursesCat = catList ;
+  //   })
+  // }
 
   // searchByCourseCat(courseItem:string){
   //   let foundedCourse = this.categoryService.searchCourseByCat(courseItem);
