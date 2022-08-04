@@ -2,10 +2,10 @@
 <!-- Registration Form  -->
 
 <section class="gradient-custom">
-  <div class=" py-5">
+  <div class="py-5 ">
     <div class="row justify-content-center align-items-center bg-light" >
       <div class="col-10 col-lg-9 col-xl-7">
-        <div class="card shadow-2-strong card-registration  my-5">
+        <div class="card m-auto w-50 shadow-2-strong card-registration  my-5">
           <div class="card-body p-md-4">
 
             <div class="w-100 text-center">
@@ -13,94 +13,116 @@
             <h3 class="mb-4 font-weight-normal">Register now </h3>
             </div>
 
-            <!-- Registration form start -->
-            <form method="POST" action="" >
-
-              <!-- User Name -->
+            <form [formGroup]="userFormGroup" (submit)="submit()">
               <div class="row">
                 <div class="col-md-6 mb-4">
-
                   <div class="form-outline">
-                    <input type="text" id="firstName" class="form-control"  name="firstName"/>
-                    <label class="form-label" for="firstName">
-                      <span class="required-field">*</span> First Name</label>
+                    <label class="form-label" for="first_name">First Name</label>
+                    <input type="text" id="first_name" class="form-control" name="first_name" formControlName="first_name" [class.is-valid]="first_name?.valid" [class.is-invalid]="first_name?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="first_name?.valid || first_name?.untouched">
+                      <small *ngIf="first_name?.errors?.['required']">
+                        The First Name is required
+                      </small>
+                      <small *ngIf="first_name?.errors?.['minLength']">
+                        The First Name is must be 3 letters at least
+                      </small>
+                    </div>
                   </div>
-
                 </div>
                 <div class="col-md-6 mb-4">
-
                   <div class="form-outline">
-                    <input type="text" id="lastName" class="form-control "  name="lastName"/>
-                    <label class="form-label" for="lastName">
-                      <span class="required-field">*</span> Last Name</label>
+                    <label class="form-label" for="last_name">Last Name</label>
+                    <input type="text" id="last_name" class="form-control" name="last_name" formControlName="last_name" [class.is-valid]="last_name?.valid" [class.is-invalid]="last_name?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="last_name?.valid || last_name?.untouched">
+                      <small *ngIf="last_name?.errors?.['required']">
+                        The Last Name is required
+                      </small>
+                      <small *ngIf="last_name?.errors?.['minLength']">
+                        The Last Name is must be 3 letters at least
+                      </small>
+                    </div>
                   </div>
-
                 </div>
               </div>
-
-
-              <!-- Enail & Phone number -->
               <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-
+                <div class="col-md-12 mb-4 pb-2">
                   <div class="form-outline">
-                    <input type="email" id="emailAddress" class="form-control " name="email"/>
-                    <label class="form-label" for="emailAddress">
-                      <span class="required-field">*</span> Email</label>
+                    <label class="form-label" for="emailAddress">Email</label>
+                    <input type="email" id="emailAddress" class="form-control" name="email" formControlName="email" [class.is-valid]="email?.valid" [class.is-invalid]="email?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="email?.valid || email?.untouched">
+                      <small *ngIf="email?.errors?.['required']">
+                        The email is required
+                      </small>
+                      <small *ngIf="email?.errors?.['email']">
+                        Enter Invalid Email
+                      </small>
+                    </div>
                   </div>
-
-                </div>
-                <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <input type="tel" id="phoneNumber" class="form-control "  name="phone"/>
-                    <label class="form-label" for="phoneNumber"> Phone Number</label>
-                  </div>
-
                 </div>
               </div>
-
-              <!-- passwords -->
               <div class="row">
                 <div class="col-md-6 mb-4 d-flex align-items-center">
-
                   <div class="form-outline datepicker w-100">
-                    <input type="password" id="form2Example2" class="form-control " name="password">
-                    <label class="form-label" for="form2Example2" >
-                      <span class="required-field">*</span> Password</label>
+                    <label class="form-label" for="username">Username</label>
+                    <input type="name" id="username" class="form-control" name="username" formControlName="username" [class.is-valid]="username?.valid" [class.is-invalid]="username?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="username?.valid || username?.untouched">
+                      <small *ngIf="username?.errors?.['required']">
+                        The username is required
+                      </small>
+                      <small *ngIf="username?.errors?.['minLength']">
+                        The username is must be 5 letters at least
+                      </small>
+                    </div>
                   </div>
-
                 </div>
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-
-                  <div class="form-outline datepicker w-100">
-                    <input type="password" id="form2Example2" class="form-control " name="repeatPassword"/>
-                    <label class="form-label" for="form2Example2">
-                      <span class="required-field">*</span> Repeat Password</label>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <label class="form-label" for="address">Address</label>
+                    <input type="text" id="address" class="form-control" name="address" formControlName="address" [class.is-valid]="address?.valid" [class.is-invalid]="address?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="address?.valid || address?.untouched">
+                      <small *ngIf="address?.errors?.['required']">
+                        The address is required
+                      </small>
+                    </div>
                   </div>
-
                 </div>
-
               </div>
-
-              <!-- <div class="row">
-                <div class="col-12">
-
-                  <select class="select ">
-                    <option value="1" disabled>Choose option</option>
-                    <option value="2">Subject 1</option>
-                    <option value="3">Subject 2</option>
-                    <option value="4">Subject 3</option>
-                  </select>
-                  <label class="form-label select-label">Choose option</label>
-
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline datepicker w-100">
+                    <label class="form-label" for="Password">Password</label>
+                    <input type="password" id="Password" class="form-control" name="password" formControlName="password" [class.is-valid]="password?.valid" [class.is-invalid]="password?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="password?.valid || password?.untouched">
+                      <small *ngIf="password?.errors?.['required']">
+                        The password is required
+                      </small>
+                      <small *ngIf="password?.errors?.['minLength']">
+                        The Password is must be 8 letters at least
+                      </small>
+                    </div>
+                  </div>
                 </div>
-              </div> -->
-
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <label class="form-label" for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" class="form-control" name="phone" formControlName="phone" [class.is-valid]="phone?.valid" [class.is-invalid]="phone?.invalid"/>
+                    <div class="alert alert-danger" [hidden]="phone?.valid || phone?.untouched">
+                      <small *ngIf="phone?.errors?.['required']">
+                        The phone is required
+                      </small>
+                      <small *ngIf="phone?.errors?.['minLength']">
+                        Enter Invalid Phone Number
+                      </small>
+                      <small *ngIf="phone?.errors?.['maxLength']">
+                        Enter Invalid Phone Number
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="mt-4 pt-2">
-                <input class="btn btn-warning btn-lg" type="submit" value="Sign Up" />
+                <input class="btn btn-warning btn-lg" type="submit" [disabled]="userFormGroup.invalid" value="Signup"/>
               </div>
-
             </form>
           </div>
         </div>

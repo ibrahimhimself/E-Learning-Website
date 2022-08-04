@@ -1,0 +1,53 @@
+{
+  "students": [
+    {
+      "firstName": "Ibrahim",
+      "lastName": "Saad",
+      "email": "ibrahim@gmail.com",
+      "password": "12345678",
+      "phone": "01551045149",
+      "id": 1
+    },
+    {
+      "firstName": "ahmed",
+      "lastName": "Saad",
+      "email": "ahmed@gmail.com",
+      "password": "12345678",
+      "phone": "01551045149",
+      "id": 2
+    },
+    {
+      "first_name": "Omar",
+      "last_name": "Esaam",
+      "email": "omar@gmail.com",
+      "password": "12345678",
+      "username": "Omar Essam",
+      "address": "almahalla",
+      "phone": "01551045148",
+      "id": 3
+    },
+    {
+      "first_name": "Ibrahim",
+      "last_name": "Saad",
+      "email": "ibrahim@gmail.com",
+      "password": "12345678",
+      "username": "Ibrahim Saad",
+      "address": "almahalla",
+      "phone": "01551045149",
+      "id": 4
+    },
+    {
+      "first_name": "Ibrahim",
+      "last_name": "Saad",
+      "email": "ibrahim@gmail.com",
+      "password": "12345678",
+      "username": "Ibrahim Saad",
+      "address": "almahalla",
+      "phone": "01551045149",
+      "id": 5
+    }
+  ],
+  "login": [
+    {}
+  ]
+}

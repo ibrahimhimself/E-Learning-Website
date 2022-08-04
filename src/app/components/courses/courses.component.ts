@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Icourses } from 'src/app/models/icourses';
+import { categoryServiceService } from 'src/app/service/category-service.service';
 
 @Component({
   selector: 'app-courses',
@@ -14,24 +15,19 @@ export class CoursesComponent implements OnInit {
   // IT Development category ID => 1
 
 
-  courseList: Icourses[];
+  courseList: Icourses[] = [];
   // courseList: Icourses = {
   //   courseID: 1, courseName:'HTML', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'
   // };
-  constructor() {
-    this.courseList = [
-      {courseID: 1, courseName:'HTML', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'},
-      {courseID: 2, courseName:'CSS', catID: 1, imgURL: '../../../assets/images/courses/2.jpg', courseContentURL: '/courses'},
-      {courseID: 3, courseName:'JS', catID: 1, imgURL: '../../../assets/images/courses/3.jpg', courseContentURL: '/courses'},
-      {courseID: 4, courseName:'Angular', catID: 1, imgURL: '../../../assets/images/courses/4.jpg', courseContentURL: '/courses'},
-      {courseID: 1, courseName:'HTML', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'},
-      {courseID: 2, courseName:'CSS', catID: 1, imgURL: '../../../assets/images/courses/2.jpg', courseContentURL: '/courses'},
-      {courseID: 3, courseName:'JS', catID: 1, imgURL: '../../../assets/images/courses/3.jpg', courseContentURL: '/courses'},
-      {courseID: 4, courseName:'Angular', catID: 1, imgURL: '../../../assets/images/courses/4.jpg', courseContentURL: '/courses'},
-    ]
+  constructor(private categoryService:categoryServiceService) {
+    
   }
 
   ngOnInit(): void {
+
+    this.categoryService.getAllCourses().subscribe(subCategoryList => {
+      this.courseList = subCategoryList;
+    })
   }
 
 }

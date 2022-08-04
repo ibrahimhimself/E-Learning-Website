@@ -8,10 +8,10 @@ import { CourseSubCategoryComponent } from './components/course-sub-category/cou
 import { CoursesComponent } from './components/courses/courses.component';
 import { HomeComponent } from './components/home/home.component';
 import { OurCategoriesComponent } from './components/our-categories/our-categories.component';
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
 const routes: Routes = [
       {path:'', redirectTo: '/home', pathMatch: 'full'}, // Default path
@@ -25,6 +25,7 @@ const routes: Routes = [
       {path:'Login', component: LoginComponent},
       {path:'CourseContent', component: CourseContentComponent},
       {path:'CourseSubCategory', component: CourseSubCategoryComponent},
+      {path:'profile', component: StudentProfileComponent},
       {path:'**', component: NotFoundComponent}, // Wild card
   ];
 @NgModule({

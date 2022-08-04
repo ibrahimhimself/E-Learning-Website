@@ -1,6 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { Courses } from 'src/app/models/courses';
 import { CoursesCat } from 'src/app/models/courses-cat';
 import { categoryServiceService } from 'src/app/service/category-service.service';
 
@@ -28,11 +27,11 @@ export class OurCategoriesComponent implements OnInit , OnChanges {
 
   }
 
-  // subCategory(itemID:number){
-  //   this.categoryService.getSubCategoryByCatID(itemID).subscribe(catList => {
-  //     this.coursesCat = catList ;
-  //   })
-  // }
+  subCategory(itemID:number){
+    this.categoryService.getSubCategoryByCatID(itemID).subscribe(catList => {
+      this.coursesCat = catList ;
+    })
+  }
 
   // searchByCourseCat(courseItem:string){
   //   let foundedCourse = this.categoryService.searchCourseByCat(courseItem);

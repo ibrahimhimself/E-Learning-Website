@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Courses } from '../models/courses';
 import { CoursesCat } from '../models/courses-cat';
+import { Icourses } from '../models/icourses';
 import { IcoursesSubCategories } from '../models/icourses-sub-categories';
 
 @Injectable({
@@ -22,6 +22,10 @@ export class categoryServiceService {
   
   getAllSubCategories():Observable<IcoursesSubCategories[]>{
     return this.httpClient.get<IcoursesSubCategories[]>(`${environment.APIBaseURL}/subcategory`);
+  }
+
+  getAllCourses():Observable<Icourses[]>{
+    return this.httpClient.get<Icourses[]>(`${environment.APIBaseURL}/course`);
   }
 
   getSubCategoryByCatID(CatID:number):Observable<CoursesCat>{

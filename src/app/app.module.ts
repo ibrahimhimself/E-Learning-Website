@@ -12,16 +12,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdvisorsComponent } from './components/advisors/advisors.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CourseContentComponent } from './components/course-content/course-content.component';
 import { CourseSubCategoryComponent } from './components/course-sub-category/course-sub-category.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,22 +40,29 @@ import { HttpClientModule } from '@angular/common/http';
     OurCategoriesComponent,
     CoursesComponent,
     ContactUsComponent,
-    MainLayoutComponent,
     NotFoundComponent,
     AdvisorsComponent,
     LoginComponent,
     RegisterComponent,
     CourseContentComponent,
-    CourseSubCategoryComponent
+    CourseSubCategoryComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    ToastrModule.forRoot(),
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

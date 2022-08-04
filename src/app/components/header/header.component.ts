@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Emitters } from 'src/app/emitters/emitters';
+import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
-
+  authenticated = false;
+  constructor(private http:HttpClient) { }
+  
   ngOnInit(): void {
+    Emitters.authEmitter.subscribe(
+      (auth: boolean) => {
+        this.authenticated = auth; 
+      }
+    );
   }
 
+  logout(){
+    this.http.post(`${environment.APIBaseURL}/logout` , {} , {withCredentials: true})
+    .subscribe(() => {
+      this.authenticated = false;
+    })
+  }
 }
