@@ -1,8 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Emitters } from 'src/app/emitters/emitters';
-import { AuthService } from 'src/app/service/auth.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-student-profile',
@@ -10,17 +6,20 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./student-profile.component.css']
 })
 export class StudentProfileComponent implements OnInit {
-  user:any = "" ;
+  username:any = "" ;
+  email:any = "" ;
+  address:any = "" ;
+  phone:any = "" ;
+  role:any = "" ;
 
-  constructor(private http:HttpClient, private authService:AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.authService.getUsers().subscribe((res:any) => {
-
-      this.user = res.data;
-
-      console.log(res.data);
-      
-    })
+    
+    this.username = localStorage.getItem('username');
+    this.email = localStorage.getItem('email');
+    this.address = localStorage.getItem('address');
+    this.phone = localStorage.getItem('phone');
+    this.role = localStorage.getItem('role');
   }
 }

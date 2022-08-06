@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { OurCategoriesComponent } from './components/our-categories/our-categories.component';
@@ -27,13 +27,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './service/auth.service';
+import { MyCoursesComponent } from './components/my-courses/my-courses.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
+    NavbarComponent,
     AboutUsComponent,
     OurExperienceAdvisorsComponent,
     WhatOurStudentsSayComponent,
@@ -48,7 +49,8 @@ import { AuthService } from './service/auth.service';
     RegisterComponent,
     CourseContentComponent,
     CourseSubCategoryComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+    MyCoursesComponent
   ],
   imports: [
     BrowserModule,

@@ -29,11 +29,11 @@
           <button *ngIf="!authService.loggedIn()" class="btn btn-outline-warning" routerLink="/Login" routerLinkActive="active" type="submit">Login</button>
           <div *ngIf="authService.loggedIn()" class="btn-group">
             <button class="btn dropdown-toggle" style="color:#002147 ;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{user.username}}
+              {{username}}
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">Your Profile</a></li>
-              <li><a class="dropdown-item">Your Courses</a></li>
+              <li><a class="dropdown-item" routerLink="/myCourses" routerLinkActive="active">Your Courses</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><button class="dropdown-item" (click)="authService.logoutUser()" type="submit">Logout</button></li>
             </ul>

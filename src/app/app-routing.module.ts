@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { AuthGuard } from './auth.guard';
+import { MyCoursesComponent } from './components/my-courses/my-courses.component';
 
 const routes: Routes = [
       {path:'', redirectTo: '/home', pathMatch: 'full'}, // Default path
@@ -26,6 +27,7 @@ const routes: Routes = [
       {path:'Login', component: LoginComponent},
       {path:'CourseContent', component: CourseContentComponent},
       {path:'CourseSubCategory', component: CourseSubCategoryComponent},
+      {path:'myCourses', component: MyCoursesComponent},
       {path:'profile', component: StudentProfileComponent, canActivate:[AuthGuard]},
       {path:'**', component: NotFoundComponent}, // Wild card
   ];

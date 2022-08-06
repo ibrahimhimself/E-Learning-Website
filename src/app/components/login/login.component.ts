@@ -1,11 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { AuthInterceptor } from 'src/app/interceptors/auth.interceptor';
 import { AuthService } from 'src/app/service/auth.service';
 import { ToastrService } from 'ngx-toastr';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +14,6 @@ export class LoginComponent implements OnInit {
 
   userFormGroup!:FormGroup;
   students:any[] = [];
-  // userType:string = "students";
-  private httpOptions = {};
 
   constructor
   (
@@ -26,13 +22,7 @@ export class LoginComponent implements OnInit {
     private router:Router ,
     private AuthService:AuthService,
     private toster:ToastrService,
-  ){
-    // this.httpOptions={
-    //   headers:new HttpHeaders({
-    //     'Content-Type': 'application/json'
-    //   })
-    // };
-  }
+  ){}
 
   get email(){
     return this.userFormGroup.get('email')
@@ -57,7 +47,12 @@ export class LoginComponent implements OnInit {
     .subscribe((res:any) => {
       this.router.navigate(["/"]);
       localStorage.setItem('token' , res.token);
-      console.log(res);
+      localStorage.setItem('username' , res.data.username);
+      localStorage.setItem('email' , res.data.email);
+      localStorage.setItem('address' , res.data.address);
+      localStorage.setItem('phone' , res.data.phone);
+      localStorage.setItem('role' , res.data.role);
+      console.log(res.data);
     })
   }  
 }

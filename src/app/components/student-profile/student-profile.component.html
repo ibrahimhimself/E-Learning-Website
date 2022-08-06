@@ -13,10 +13,10 @@
           <div class="col-md-6">
               <div class="profile-head">
                   <h5>
-                      {{user.username}}
+                      {{username}}
                   </h5>
                   <h6>
-                      {{user.role}}
+                      {{role}}
                   </h6>
                   <ul class="nav nav-tabs mt-5 mb-4 mb-0">
                       <li class="nav-item">
@@ -37,7 +37,7 @@
                                       <label>First Name</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{user.first_name}}</p>
+                                      <!-- <p>{{first_name}}</p> -->
                                   </div>
                               </div>
                               <div class="row">
@@ -45,7 +45,7 @@
                                       <label>Last Name</label>
                                   </div>
                                   <div class="col-md-6">
-                                    <p>{{user.last_name}}</p>
+                                    <!-- <p>{{last_name}}</p> -->
                                   </div>
                               </div>
                               <div class="row">
@@ -53,7 +53,7 @@
                                       <label>Email</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{user.email}}</p>
+                                      <p>{{email}}</p>
                                   </div>
                               </div>
                               <div class="row">
@@ -61,7 +61,7 @@
                                       <label>Phone</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{user.phone}}</p>
+                                      <p>{{phone}}</p>
                                   </div>
                               </div>
                               <div class="row">
@@ -69,60 +69,20 @@
                                       <label>Profession</label>
                                   </div>
                                   <div class="col-md-6">
-                                      <p>{{user.role}}</p>
+                                      <p>{{role}}</p>
                                   </div>
                               </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <label>Address</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{address}}</p>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <label>Experience</label>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <p>Expert</p>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <label>Hourly Rate</label>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <p>10$/hr</p>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <label>Total Projects</label>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <p>230</p>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <label>English Level</label>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <p>Expert</p>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                  <div class="col-md-6">
-                                      <label>Availability</label>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <p>6 months</p>
-                                  </div>
-                              </div>
-                      <div class="row">
-                          <div class="col-md-12">
-                              <label>Your Bio</label><br/>
-                              <p>Your detail description</p>
-                          </div>
-                      </div>
+                            </div>
                   </div>
               </div>
           </div>
-      </div>
   </form>           
 </div>
