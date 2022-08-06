@@ -10,14 +10,17 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./student-profile.component.css']
 })
 export class StudentProfileComponent implements OnInit {
-  user = "" ;
+  user:any = "" ;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private authService:AuthService) { }
 
   ngOnInit(): void {
-    this.http.get(`${environment.APIBaseURL}/user` , {withCredentials: true}).subscribe((res:any) => {
-      this.user = res;
-      Emitters.authEmitter.emit(true);
+    this.authService.getUsers().subscribe((res:any) => {
+
+      this.user = res.data;
+
+      console.log(res.data);
+      
     })
   }
 }

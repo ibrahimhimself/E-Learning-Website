@@ -25,6 +25,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './service/auth.service';
 
 
 @NgModule({
@@ -58,7 +60,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [{
+  providers: [AuthService , AuthGuard , 
+  {
     provide:HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
     multi:true

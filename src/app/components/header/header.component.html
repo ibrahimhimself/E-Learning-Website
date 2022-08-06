@@ -25,17 +25,17 @@
           </li>
         </ul>
         <form class="d-flex">
-          <button *ngIf="!authenticated" class="btn btn-outline-warning me-3" type="submit" routerLink="/Signup" routerLinkActive="active">Signup</button>
-          <button *ngIf="!authenticated" class="btn btn-outline-warning" routerLink="/Login" routerLinkActive="active" type="submit">Login</button>
-          <div *ngIf="authenticated" class="btn-group">
+          <button *ngIf="!authService.loggedIn()" class="btn btn-outline-warning me-3" type="submit" routerLink="/Signup" routerLinkActive="active">Signup</button>
+          <button *ngIf="!authService.loggedIn()" class="btn btn-outline-warning" routerLink="/Login" routerLinkActive="active" type="submit">Login</button>
+          <div *ngIf="authService.loggedIn()" class="btn-group">
             <button class="btn dropdown-toggle" style="color:#002147 ;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <!-- {{user}} -->
+              {{user.username}}
             </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/profile" routerLinkActive="active">Your Profile</a></li>
               <li><a class="dropdown-item">Your Courses</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><button class="dropdown-item" (click)="logout()" type="submit" routerLink="/Login" routerLinkActive="active">Logout</button></li>
+              <li><button class="dropdown-item" (click)="authService.logoutUser()" type="submit">Logout</button></li>
             </ul>
           </div>
         </form>

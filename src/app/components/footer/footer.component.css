@@ -1,3 +1,4 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 .footer-basic {
     padding:40px 0;
     background-color:#002147;
@@ -30,7 +31,7 @@
 .footer-basic .social {
     text-align:center;
     padding-bottom:25px;
-    color: #ffc107;
+    color: #fff;
 }
 
 .footer-basic .social > a {
@@ -46,8 +47,8 @@
     color:inherit;
 }
 
-.footer-basic .social > a:hover {
-    opacity:0.9;
+.footer-basic .social:hover > a:hover {
+    color: #ffc107;
 }
 
 .footer-basic .copyright {

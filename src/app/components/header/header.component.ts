@@ -11,21 +11,18 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit {
 
-  authenticated = false;
-  constructor(private http:HttpClient) { }
+  // authenticated = false;
+  user:any = ""
+  constructor(private http:HttpClient , public authService:AuthService) { }
   
   ngOnInit(): void {
-    Emitters.authEmitter.subscribe(
-      (auth: boolean) => {
-        this.authenticated = auth; 
-      }
-    );
-  }
 
-  logout(){
-    this.http.post(`${environment.APIBaseURL}/logout` , {} , {withCredentials: true})
-    .subscribe(() => {
-      this.authenticated = false;
+    this.authService.getUsers().subscribe((res:any) => {
+
+      this.user = res.data;
+      // console.log(localStorage.getItem('token'));
+      // console.log(res.data.id);
     })
   }
+
 }

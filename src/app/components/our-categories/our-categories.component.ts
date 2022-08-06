@@ -1,6 +1,6 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { CoursesCat } from 'src/app/models/courses-cat';
+import { CoursesCat } from 'src/app/Models/courses-cat';
 import { categoryServiceService } from 'src/app/service/category-service.service';
 
 @Component({

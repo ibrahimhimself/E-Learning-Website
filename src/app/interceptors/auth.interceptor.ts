@@ -1,46 +1,19 @@
-import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
-  HttpErrorResponse,
-  HttpClient
-} from '@angular/common/http';
-import { catchError, Observable, switchMap, throwError } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import {Injectable , Injector} from '@angular/core';
+import {HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import { AuthService } from '../service/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  static accessToken = '';
-  refresh = false;
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient , private injector:Injector) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const req = request.clone({
-      setHeaders:{
-        Authorization: `Bearer ${AuthInterceptor.accessToken}`
-      }
-    });
-
-    return next.handle(req).pipe(catchError((err: HttpErrorResponse) => {
-      if(err.status === 401 && !this.refresh){
-        this.refresh = true;
-        return this.http.post(`${environment.APIBaseURL}/refresh` , {} , {withCredentials:true}).pipe(
-          switchMap((res: any) => {
-            AuthInterceptor.accessToken = res.token;
-
-            return next.handle(request.clone({
-              setHeaders:{
-                Authorization: `Bearer ${AuthInterceptor.accessToken}`
-              }
-            }));
-          })
-        )
-      }
-      this.refresh = false;
-      return throwError(() => err)
-    }));
+  intercept(req:any , next:any) {
+    let authService = this.injector.get(AuthService)
+    let tokenizedReq = req.clone({
+    setHeaders: {
+        Authorization:`Bearer ${authService.getToken()}`
+    }
+    })
+    return next.handle(tokenizedReq);
   }
 }

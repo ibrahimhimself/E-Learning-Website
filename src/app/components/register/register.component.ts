@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
 
   userFormGroup!:FormGroup;
   students:any[] = [];
+  private httpOptions = {};
+
   constructor
   (
     private fb : FormBuilder ,
@@ -24,8 +26,12 @@ export class RegisterComponent implements OnInit {
     private toster:ToastrService
   )
   {
+    this.httpOptions={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json'
 
-    
+      })
+    };
   }
 
   get first_name(){
@@ -51,12 +57,11 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getUsers();
     this.userFormGroup = this.fb.group({
       first_name:['',[Validators.required , Validators.minLength(3)]],
       last_name:['',[Validators.required , Validators.minLength(3)]],
       email:['',[Validators.required , Validators.email]],
-      password:['',[Validators.required , Validators.minLength(8)]],
+      password:['',[Validators.required , Validators.minLength(5)]],
       username:['',[Validators.required , Validators.minLength(5)]],
       address:['',[Validators.required]],
       phone:['',[Validators.required , Validators.minLength(11) , Validators.maxLength(11)]],
@@ -64,48 +69,11 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(){
-    this.http.post(`${environment.APIBaseURL}/student/create` , this.userFormGroup.getRawValue())
-    .subscribe(res => {
-      // this.router.navigate(['Login']); 
+    this.AuthService.createUserStudent(this.userFormGroup.getRawValue())
+    .subscribe((res:any) => {
+      this.router.navigate(['Login']);
+      localStorage.setItem('token' , res.token);
       console.log(res);
-      
     })
   }
-
-  // getUsers(){
-  //   this.AuthService.getUsers().subscribe((res:any) => {
-  //     this.students = res;
-  //   })
-  // }
-
-  // submit(){
-  //   let index = this.students.findIndex(item => item.email == this.userFormGroup.value.email);
-  //   if(index !== -1){
-  //     this.toster.error("This Email is Already Taken" , "" , {
-  //       disableTimeOut:false,
-  //       titleClass:"toastr_title",
-  //       messageClass:"toastr_message",
-  //       timeOut:5000,
-  //       closeButton:true
-  //     });
-  //   }
-  //   else
-  //   {
-  //     this.AuthService.createUserStudent(this.userFormGroup.getRawValue()).subscribe(res => {
-  //     this.toster.success("Already Registed" , "" , {
-  //       disableTimeOut:false,
-  //       titleClass:"toastr_title",
-  //       messageClass:"toastr_message",
-  //       timeOut:5000,
-  //       closeButton:true
-  //     });
-  //     this.router.navigate(['/Login']);
-  //   })
-  //   }
-  // }
-  // submit(){
-  //     this.AuthService.createUserStudent(this.userFormGroup.getRawValue()).subscribe(res => {
-  //     this.router.navigate(['/Login']);
-  //   })
-  // }
 }

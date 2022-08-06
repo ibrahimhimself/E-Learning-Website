@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CoursesCat } from 'src/app/models/courses-cat';
-import { IcoursesSubCategories } from 'src/app/models/icourses-sub-categories';
+import { CoursesCat } from 'src/app/Models/courses-cat';
+import { IcoursesSubCategories } from 'src/app/Models/icourses-sub-categories';
 import { categoryServiceService } from 'src/app/service/category-service.service';
 
 @Component({

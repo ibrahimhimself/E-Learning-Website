@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CoursesCat } from '../models/courses-cat';
-import { Icourses } from '../models/icourses';
-import { IcoursesSubCategories } from '../models/icourses-sub-categories';
+import { CoursesCat } from '../Models/courses-cat';
+import { Icourses } from '../Models/icourses';
+import { IcoursesSubCategories } from '../Models/icourses-sub-categories';
 
 @Injectable({
   providedIn: 'root'

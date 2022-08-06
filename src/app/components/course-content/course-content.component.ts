@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Ilessons } from 'src/app/models/ilessons';
+import { Ilessons } from 'src/app/Models/ilessons';
 
 @Component({
   selector: 'app-course-content',

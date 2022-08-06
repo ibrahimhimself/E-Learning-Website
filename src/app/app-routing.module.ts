@@ -12,6 +12,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
       {path:'', redirectTo: '/home', pathMatch: 'full'}, // Default path
@@ -25,7 +26,7 @@ const routes: Routes = [
       {path:'Login', component: LoginComponent},
       {path:'CourseContent', component: CourseContentComponent},
       {path:'CourseSubCategory', component: CourseSubCategoryComponent},
-      {path:'profile', component: StudentProfileComponent},
+      {path:'profile', component: StudentProfileComponent, canActivate:[AuthGuard]},
       {path:'**', component: NotFoundComponent}, // Wild card
   ];
 @NgModule({
