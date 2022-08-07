@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './service/auth.service';
 import { MyCoursesComponent } from './components/my-courses/my-courses.component';
+import { InstructorDetailsComponent } from './components/instructor-details/instructor-details.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MyCoursesComponent } from './components/my-courses/my-courses.component
     CourseContentComponent,
     CourseSubCategoryComponent,
     StudentProfileComponent,
-    MyCoursesComponent
+    MyCoursesComponent,
+    InstructorDetailsComponent
   ],
   imports: [
     BrowserModule,

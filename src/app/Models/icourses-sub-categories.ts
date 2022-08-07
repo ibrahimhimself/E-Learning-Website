@@ -1,5 +1,3 @@
-import { Icon } from "@fortawesome/fontawesome-svg-core";
-
 export interface IcoursesSubCategories {
   id: number;
   name: string;

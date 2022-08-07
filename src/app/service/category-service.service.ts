@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CoursesCat } from '../Models/courses-cat';
-import { Icourses } from '../Models/icourses';
 import { IcoursesSubCategories } from '../Models/icourses-sub-categories';
 
 @Injectable({
@@ -11,21 +10,10 @@ import { IcoursesSubCategories } from '../Models/icourses-sub-categories';
 })
 export class categoryServiceService {
 
-
-  constructor(private httpClient:HttpClient) {
-    
-  }
+  constructor(private httpClient:HttpClient) {}
 
   getAllCategories():Observable<CoursesCat[]>{
     return this.httpClient.get<CoursesCat[]>(`${environment.APIBaseURL}/category`);
-  }
-  
-  getAllSubCategories():Observable<IcoursesSubCategories[]>{
-    return this.httpClient.get<IcoursesSubCategories[]>(`${environment.APIBaseURL}/subcategory`);
-  }
-
-  getAllCourses():Observable<Icourses[]>{
-    return this.httpClient.get<Icourses[]>(`${environment.APIBaseURL}/course`);
   }
 
   getSubCategoryByCatID(CatID:number):Observable<CoursesCat>{
@@ -34,5 +22,13 @@ export class categoryServiceService {
 
   getCourseBySubCatID(SubCatID:number):Observable<IcoursesSubCategories>{
     return this.httpClient.get<IcoursesSubCategories>(`${environment.APIBaseURL}/getCourseBySubCategoryId/${SubCatID}`)
+  }
+
+  getAllInstructors(){
+    return this.httpClient.get(`${environment.APIBaseURL}/instructors`)
+  }
+
+  getInstructorDetailsByID(insID:any){
+    return this.httpClient.get(`${environment.APIBaseURL}/instructors/${insID}`)
   }
 }
