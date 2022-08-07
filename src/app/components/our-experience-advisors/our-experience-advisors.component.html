@@ -2,45 +2,44 @@
     <div class="row">
         <div class="col-12 pt-5 pb-5 text-center">
             <div>
-                <h1 style="color:#002147">Our Experience Advisors</h1>
+                <h1 style="color:#002147">Our Experience Instructors</h1>
                 <p class="text-black-50">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scelerisqu Nullam arcu liquam here was consequat.</p>
             </div>
         </div>
-        <div class="col-xl-3 col-md-4 col-12 mb-3">
+        <div class="col-xl-3 col-md-4 col-12 mb-3" *ngFor="let Ins of advisorsList">
             <div class="card text-center">
-                <img src="assets/images/team/teammember1.jpg" class="card-img-top">
+                <img src="http://127.0.0.1:8000/assets/dist/img/User-images/{{Ins.image}}" class="card-img-top">
                 <div class="card-body">
-                  <a href="#"><h5 class="card-title">Chase M. Bynum</h5></a>
-                  <h6 class="card-text">English Teacher</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-12 mb-3">
-            <div class="card text-center">
-                <img src="assets/images/team/teammember2.jpg" class="card-img-top">
-                <div class="card-body">
-                  <a href="#"><h5 class="card-title">Chase M. Bynum</h5></a>
-                  <h6 class="card-text">English Teacher</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-12 mb-3">
-            <div class="card text-center">
-                <img src="assets/images/team/teammember3.jpg" class="card-img-top">
-                <div class="card-body">
-                  <a href="#"><h5 class="card-title">Chase M. Bynum</h5></a>
-                  <h6 class="card-text">English Teacher</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-12 mb-3">
-            <div class="card text-center">
-                <img src="assets/images/team/teammember4.jpg" class="card-img-top">
-                <div class="card-body">
-                  <a href="#"><h5 class="card-title">Chase M. Bynum</h5></a>
-                  <h6 class="card-text">English Teacher</h6>
+                  <a [routerLink]="['/instructorDetails',Ins.id]"><h5 class="card-title">{{Ins.username}}</h5></a>
+                  <h6 class="card-text">{{Ins.role|uppercase}}</h6>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- <section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 pb-5 text-center">
+                <div>
+                    <h1 style="color:#002147">Our Experience Advisors</h1>
+                    <p class="text-black-50">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scelerisqu Nullam arcu liquam here was consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-12 mx-auto" *ngFor="let Ins of advisorsList">
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="bi fs-2 text-light bi-blockquote-right"></i></div>
+                    <p class="mb-0 mt-2 font-italic">{{Ins.description}}</p>
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">
+                        <h4>{{Ins.username}}</h4>
+                        <h6>{{Ins.scientific_degree}}</h6>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section> -->

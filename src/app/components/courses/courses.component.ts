@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Icourses } from 'src/app/Models/icourses';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { categoryServiceService } from 'src/app/service/category-service.service';
 
 @Component({
@@ -9,24 +10,19 @@ import { categoryServiceService } from 'src/app/service/category-service.service
 })
 export class CoursesComponent implements OnInit {
 
-  categoryName: string = 'Programming';
-  categoryDiscription: string = 'Programming is the implementation of logic to facilitate specified computing operations and functionality. It occurs in one or more languages, which differ by application, domain and programming model.';
+  subCatId:any;
+  data:any = {};
 
-  // IT Development category ID => 1
-
-
-  courseList: Icourses[] = [];
-  // courseList: Icourses = {
-  //   courseID: 1, courseName:'HTML', catID: 1, imgURL: '../../../assets/images/courses/1.jpg', courseContentURL: '/courses'
-  // };
-  constructor(private categoryService:categoryServiceService) {
+  constructor(private categoryService:categoryServiceService , private activateRoute:ActivatedRoute) {
+    this.subCatId = this.activateRoute.snapshot.paramMap.get("subCatID");
+    console.log(this.subCatId);
     
   }
 
   ngOnInit(): void {
 
-    this.categoryService.getAllCourses().subscribe(subCategoryList => {
-      this.courseList = subCategoryList;
+    this.categoryService.getCourseBySubCatID(this.subCatId).subscribe(res => {
+      this.data = res
     })
   }
 

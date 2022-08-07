@@ -8,14 +8,13 @@
 
           <!-- section-title -->
             <div class="section-title text-light text-center">
-                <h2>Our {{categoryName}} Courses</h2>
-                <p class="w-75 m-auto mb-5 mt-3">{{categoryDiscription}}</p>
+                <h2>Our Courses Content</h2>
+                <p class="fs-1 m-auto text-warning mb-5 mt-3" *ngIf ="!authService.loggedIn()">Please Login To Start Watch Course</p>
             </div>
 
 
-            <div class="row">
+            <div class="row" *ngIf ="authService.loggedIn()">
 
-              <!-- Course 1 -->
               <div class="col-sm-12 col-md-9">
 
                 <div class="categorie-item">
@@ -24,8 +23,6 @@
                     <h5 style="font-weight: bold">Course Content</h5>
                   </div>
                 </div>
-
-
                 <div  *ngFor="let course of lessonList">
                   <a [href]="course.lessonURL" target="_blank">
                     <div class="categorie-item">
