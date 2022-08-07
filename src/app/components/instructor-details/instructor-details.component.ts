@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Advisors } from 'src/app/Models/advisors';
+import { ActivatedRoute } from '@angular/router';
 import { categoryServiceService } from 'src/app/service/category-service.service';
-import { Location } from '@angular/common';
 
 
 @Component({
@@ -13,7 +11,7 @@ import { Location } from '@angular/common';
 export class InstructorDetailsComponent implements OnInit {
   
   id:any
-  data:any = {}
+  data2:any = {}
   constructor(
     private categoryService:categoryServiceService,
     private activeRouter:ActivatedRoute
@@ -29,9 +27,8 @@ export class InstructorDetailsComponent implements OnInit {
   }
 
   getInstructor(){
-    this.categoryService.getInstructorDetailsByID(this.id).subscribe(res => {
-      this.data = res;
-      console.log(res);
+    this.categoryService.getInstructorDetailsByID(this.id).subscribe((res:any) => {
+      this.data2 = res.data;  
     })
   }
 }

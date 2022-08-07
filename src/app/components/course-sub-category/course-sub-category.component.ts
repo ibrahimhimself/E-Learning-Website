@@ -30,9 +30,6 @@ export class CourseSubCategoryComponent implements OnInit {
     this.categoryService.getSubCategoryByCatID(this.catID).subscribe(res => {
       this.data = res;
     })
-    this.categoryService.getSubCategoryByCatID(this.catID).subscribe(res => {
-      this.data = res;
-    })
 
   }
 

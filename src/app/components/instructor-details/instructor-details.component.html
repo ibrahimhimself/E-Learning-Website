@@ -1,1 +1,84 @@
-<!-- <h1>{{data.username}}</h1> -->
+<div class="container-fluid emp-profile">
+  <form method="post">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="profile-img">
+                  <img src="http://127.0.0.1:8000/assets/dist/img/User-images/{{this.data2[0].image}}" class="w-50"/>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="profile-head">
+                  <h5>
+                    {{this.data2[0].username}}
+                  </h5>
+                  <h6>
+                    {{this.data2[0].role|uppercase}}
+                  </h6>
+                  <ul class="nav nav-tabs mt-5 mb-4 mb-0">
+                      <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" routerLink="/profile" routerLinkActive="active" role="tab" aria-controls="home" aria-selected="true">About</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-8 info">
+              <div class="tab-content profile-tab" id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>First Name</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{this.data2[0].first_name}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>Last Name</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <p>{{this.data2[0].last_name}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>Email</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{this.data2[0].email}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>Phone</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{this.data2[0].phone}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <label>Profession</label>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <p>{{this.data2[0].scientific_degree}}</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-6">
+                                    <label>Description</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{this.data2[0].description}}</p>
+                                </div>
+                            </div>
+                            </div>
+                  </div>
+              </div>
+          </div>
+  </form>           
+</div>

@@ -23,6 +23,8 @@ export class CoursesComponent implements OnInit {
 
     this.categoryService.getCourseBySubCatID(this.subCatId).subscribe(res => {
       this.data = res
+      console.log(res);
+      
     })
   }
 

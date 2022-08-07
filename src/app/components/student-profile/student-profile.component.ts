@@ -11,6 +11,8 @@ export class StudentProfileComponent implements OnInit {
   address:any = "" ;
   phone:any = "" ;
   role:any = "" ;
+  first_name:any = "" ;
+  last_name:any = "" ;
 
   constructor() { }
 
@@ -21,5 +23,7 @@ export class StudentProfileComponent implements OnInit {
     this.address = localStorage.getItem('address');
     this.phone = localStorage.getItem('phone');
     this.role = localStorage.getItem('role');
+    this.first_name = localStorage.getItem('first_name');
+    this.last_name = localStorage.getItem('last_name');
   }
 }
