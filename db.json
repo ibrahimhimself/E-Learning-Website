@@ -1,0 +1,215 @@
+{
+  "students": [
+    {
+      "username": "test",
+      "email": "test@test.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "username": "Mohamed",
+      "email": "mohamed@gmail.com",
+      "password": "123",
+      "subjects": [
+        {
+          "name": "Laravel",
+          "id": "1",
+          "degree": 1
+        },
+        {
+          "name": "Angular",
+          "id": "2",
+          "degree": 0
+        }
+      ],
+      "id": 2
+    },
+    {
+      "username": "Ali",
+      "email": "ali@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "username": "Ahmed",
+      "email": "ahmed@gmail.com",
+      "password": "123",
+      "subjects": [
+        {
+          "name": "Laravel",
+          "id": "1",
+          "degree": 2
+        },
+        {
+          "name": "Angular",
+          "id": "2",
+          "degree": 1
+        }
+      ],
+      "id": 4
+    },
+    {
+      "username": "ahmednemr",
+      "email": "ahmedelnemr064@gmail.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "username": "nemr",
+      "email": "nemr@nemr.com",
+      "password": "123",
+      "subjects": [
+        {
+          "name": "css",
+          "id": "3",
+          "degree": 1
+        },
+        {
+          "name": "Laravel",
+          "id": "1",
+          "degree": 0
+        },
+        {
+          "name": "Node Js",
+          "id": "4",
+          "degree": 2
+        },
+        {
+          "name": "js",
+          "id": "5",
+          "degree": 2
+        }
+      ],
+      "id": 6
+    },
+    {
+      "username": "ibrahim",
+      "email": "ibrahim@gmail.com",
+      "password": "12345",
+      "id": 7
+    }
+  ],
+  "doctor": [
+    {
+      "username": "admin",
+      "email": "admin@admin.com",
+      "password": "123",
+      "id": 1
+    }
+  ],
+  "subjects": [
+    {
+      "name": "Laravel",
+      "questions": [
+        {
+          "question": "2*2",
+          "answer1": "4",
+          "answer2": "6",
+          "answer3": "8",
+          "answer4": "3",
+          "correctAnswer": "4"
+        },
+        {
+          "question": "5+20",
+          "answer1": "25",
+          "answer2": "35",
+          "answer3": "30",
+          "answer4": "40",
+          "correctAnswer": "25"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "css",
+      "questions": [
+        {
+          "question": "dvfvf",
+          "answer1": "dv",
+          "answer2": "dv",
+          "answer3": "vdv",
+          "answer4": "vdv",
+          "correctAnswer": "dv"
+        },
+        {
+          "question": "sccsscsc",
+          "answer1": "sc",
+          "answer2": "csc",
+          "answer3": "ac",
+          "answer4": "csc",
+          "correctAnswer": "csc"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "Node Js",
+      "questions": [
+        {
+          "question": "eeeeeeeeeeee",
+          "answer1": "f",
+          "answer2": "v",
+          "answer3": "a",
+          "answer4": "f",
+          "correctAnswer": "f"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "js",
+      "questions": [
+        {
+          "question": "gggggggggg",
+          "answer1": "ggg",
+          "answer2": "gg",
+          "answer3": "gg",
+          "answer4": "ggg",
+          "correctAnswer": "gg"
+        },
+        {
+          "question": "dfddddddddddd",
+          "answer1": "fdfd",
+          "answer2": "vv",
+          "answer3": "fdf",
+          "answer4": "fdff",
+          "correctAnswer": "fdfd"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "sql",
+      "questions": [
+        {
+          "question": "ffffffffffff",
+          "answer1": "qw",
+          "answer2": "cxc",
+          "answer3": "gbf",
+          "answer4": "gvbf",
+          "correctAnswer": "qw"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "name": "تا رلاب",
+      "questions": [
+        {
+          "question": "ببببببببببب",
+          "answer1": "بببببببببب",
+          "answer2": "سسسسسسسسسسس",
+          "answer3": "بببببببببب",
+          "answer4": "ببببببببببب",
+          "correctAnswer": "بببببببببب"
+        }
+      ],
+      "id": 7
+    }
+  ],
+  "login": [
+    {
+      "id": 1
+    }
+  ]
+}

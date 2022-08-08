@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { categoryServiceService } from 'src/app/service/category-service.service';
 
 @Component({
   selector: 'app-our-experience-advisors',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurExperienceAdvisorsComponent implements OnInit {
 
-  constructor() { }
+  advisorsList:any = [];
+  constructor(private categoryService:categoryServiceService) { }
 
   ngOnInit(): void {
+    this.categoryService.getAllInstructors().subscribe((advList:any) => {
+      this.advisorsList = advList.data;
+      // console.log(typeof(advList));
+      // console.log(advList.data);
+    })
   }
 
 }

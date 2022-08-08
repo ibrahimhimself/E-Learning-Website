@@ -14,21 +14,37 @@ import { LoginComponent } from './components/login/login.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { AuthGuard } from './auth.guard';
 import { MyCoursesComponent } from './components/my-courses/my-courses.component';
+import { InstructorDetailsComponent } from './components/instructor-details/instructor-details.component';
+import { ExamLoginComponent } from './components/exam/auth/components/exam-login/exam-login.component';
+import { ExamRegisterComponent } from './components/exam/auth/components/exam-register/exam-register.component';
+import { ExamComponent } from './components/exam/student/components/exam/exam.component';
+import { StudentsComponent } from './components/exam/doctor/components/students/students.component';
+import { SubjectsComponent } from './components/exam/doctor/components/subjects/subjects.component';
+import { NewExamComponent } from './components/exam/doctor/components/new-exam/new-exam.component';
+
 
 const routes: Routes = [
       {path:'', redirectTo: '/home', pathMatch: 'full'}, // Default path
       {path:'home', component: HomeComponent},
       {path:'about', component: AboutUsComponent},
-      {path:'courses', component: CoursesComponent},
+      {path:'courses/:subCatID', component: CoursesComponent},
       {path:'advisors', component: AdvisorsComponent},
+      {path:'instructorDetails/:id', component: InstructorDetailsComponent},
       {path:'ourCategories', component: OurCategoriesComponent},
       {path:'contact-us', component: ContactUsComponent},
       {path:'Signup', component: RegisterComponent},
       {path:'Login', component: LoginComponent},
       {path:'CourseContent', component: CourseContentComponent},
-      {path:'CourseSubCategory', component: CourseSubCategoryComponent},
+      {path:'CourseSubCategory/:catID', component: CourseSubCategoryComponent},
       {path:'myCourses', component: MyCoursesComponent},
       {path:'profile', component: StudentProfileComponent, canActivate:[AuthGuard]},
+      {path:'exam-login' , component:ExamLoginComponent},
+      {path:'exam-register' , component:ExamRegisterComponent},
+      {path:'exam/:id' , component:ExamComponent},
+      {path:'students' , component:StudentsComponent},
+      {path:'subjects' , component:SubjectsComponent},
+      {path:'new-exam' , component:NewExamComponent},
+      {path:'exam' , component:ExamRegisterComponent},
       {path:'**', component: NotFoundComponent}, // Wild card
   ];
 @NgModule({

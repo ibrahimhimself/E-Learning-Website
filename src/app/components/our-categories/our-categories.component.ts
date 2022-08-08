@@ -11,9 +11,7 @@ import { categoryServiceService } from 'src/app/service/category-service.service
 export class OurCategoriesComponent implements OnInit , OnChanges {
 
   coursesCat:any= [];
-  constructor(private categoryService:categoryServiceService) {
-
-  }
+  constructor(private categoryService:categoryServiceService) {}
 
   ngOnChanges(): void {
     
@@ -26,21 +24,4 @@ export class OurCategoriesComponent implements OnInit , OnChanges {
     })
 
   }
-
-  subCategory(itemID:number){
-    this.categoryService.getSubCategoryByCatID(itemID).subscribe(catList => {
-      this.coursesCat = catList ;
-    })
-  }
-
-  // searchByCourseCat(courseItem:string){
-  //   let foundedCourse = this.categoryService.searchCourseByCat(courseItem);
-  //   if(foundedCourse)
-  //   {
-  //     this.courses = foundedCourse;
-  //   }
-  //   else{
-  //     alert("This Course Not Founded")
-  //   }
-  // }
 }

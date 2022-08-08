@@ -11,40 +11,26 @@ import { categoryServiceService } from 'src/app/service/category-service.service
 })
 export class CourseSubCategoryComponent implements OnInit {
 
-  subCatList: IcoursesSubCategories[] = [];
-  subCat:any|undefined = undefined;
-  catIDList:any = [];
-  currentcatID:number = 0;
-  currentIndex:number = 0;
+  // subCatList: IcoursesSubCategories[] = [];
+  catID:any;
+  data:any = {};
 
   constructor(private categoryService:categoryServiceService,
               private router:Router, 
               private activeRouter:ActivatedRoute,
-    ) {
+    )
+  {
+    this.catID = this.activeRouter.snapshot.paramMap.get("catID");
+    console.log(this.catID);
     
   }
 
   ngOnInit(): void {
-    
-    this.categoryService.getAllSubCategories().subscribe(subCategoryList => {
-      this.subCatList = subCategoryList;
+
+    this.categoryService.getSubCategoryByCatID(this.catID).subscribe(res => {
+      this.data = res;
     })
 
-
-
-    // this.catIDList =  this.categoryService.getAllCategories();
-    // this.activeRouter.paramMap.subscribe(paramMap=>{
-    //   this.currentcatID=(paramMap.get('itemID'))?Number(paramMap.get('itemID')):0;
-    //   let foundedProduct = this.categoryService.getSubCategoryByCatID(this.currentcatID);
-    //   if(foundedProduct){
-    //       this.subCat = foundedProduct;
-    //     }
-    //     else
-    //     {
-    //       alert('Product Not Founded');
-    //       // this.location.back();
-    //     }
-    // })
   }
 
 }

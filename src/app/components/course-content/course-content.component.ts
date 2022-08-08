@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Ilessons } from 'src/app/Models/ilessons';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-course-content',
@@ -20,7 +21,7 @@ export class CourseContentComponent implements OnInit {
   // courseList: Icourses = {
   //   lessonNumber: 1, lessonName:'HTML', catID: 1,
   // };
-  constructor() {
+  constructor( public authService:AuthService) {
     this.lessonList = [
       {lessonNumber: 1, lessonName:' تعلم HTML في 2021 - درس 01# - مقدمة وماذا تحتاج لتتعلم', lessonURL: 'https://www.youtube.com/watch?v=6QAELgirvjs', duration: '11:04' ,catID: 1,},
 
