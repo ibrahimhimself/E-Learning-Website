@@ -29,6 +29,12 @@ import { AuthGuard } from './auth.guard';
 import { AuthService } from './service/auth.service';
 import { MyCoursesComponent } from './components/my-courses/my-courses.component';
 import { InstructorDetailsComponent } from './components/instructor-details/instructor-details.component';
+import { AuthModule } from './components/exam/auth/auth.module';
+
+import { SharedModule } from './components/exam/shared/shared.module';
+import { StudentModule } from './components/exam/student/student.module';
+import { DoctorModule } from './components/exam/doctor/doctor.module';
+
 
 
 @NgModule({
@@ -62,7 +68,11 @@ import { InstructorDetailsComponent } from './components/instructor-details/inst
     ToastrModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AuthModule,
+    DoctorModule,
+    SharedModule,
+    StudentModule
   ],
   providers: [AuthService , AuthGuard , 
   {

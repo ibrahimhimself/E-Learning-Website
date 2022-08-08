@@ -24,10 +24,10 @@
     right: 0;
     top: 0;
 }
-.profile-head h5{
+.profile-head h1{
     color: #333;
 }
-.profile-head h6{
+.profile-head h2{
     color: #0062cc;
 }
 .profile-head .nav-tabs .nav-link{
@@ -63,4 +63,45 @@
 .profile-tab p{
     font-weight: 600;
     color: #0062cc;
+}
+
+
+h1
+{
+    font-size: 24px;
+}
+
+h2
+{
+    font-size: 21px;
+}
+
+h3
+{
+    font-size: 18px;
+}
+
+h4
+{
+    font-size: 16px;
+}
+
+h5
+{
+    font-size: 14px;
+}
+
+h6
+{
+    font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: bolder;
+}
+
+p, label
+{
+    font-size: 16px;
 }
