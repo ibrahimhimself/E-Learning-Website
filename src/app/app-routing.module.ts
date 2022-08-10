@@ -34,7 +34,7 @@ const routes: Routes = [
       {path:'contact-us', component: ContactUsComponent},
       {path:'Signup', component: RegisterComponent},
       {path:'Login', component: LoginComponent},
-      {path:'CourseContent', component: CourseContentComponent},
+      {path:'CourseContent/:courseID', component: CourseContentComponent},
       {path:'CourseSubCategory/:catID', component: CourseSubCategoryComponent},
       {path:'myCourses', component: MyCoursesComponent},
       {path:'profile', component: StudentProfileComponent, canActivate:[AuthGuard]},

@@ -8,45 +8,32 @@
 
           <!-- section-title -->
             <div class="section-title text-light text-center">
-                <h2>Our Courses Content</h2>
+                <h1 class="fs-1 mb-5">Our Courses Content</h1>
                 <p class="fs-1 m-auto text-warning mb-5 mt-3" *ngIf ="!authService.loggedIn()">Please Login To Start Watch Course</p>
             </div>
-
-
             <div class="row" *ngIf ="authService.loggedIn()">
-
               <div class="col-sm-12 col-md-9">
-
                 <div class="categorie-item">
-                  <div class="ci-text ">
-                    <i class="fa-solid fa-align-left text-dark">icon</i>
-                    <h5 style="font-weight: bold">Course Content</h5>
+                  <div class="ci-text">
+                    <h1 style="font-weight: bold">Course Content</h1>
                   </div>
                 </div>
-                <div  *ngFor="let course of lessonList">
-                  <a [href]="course.lessonURL" target="_blank">
+                <div  *ngFor="let course of data">
+                  <a [href]="course.source" target="_blank">
                     <div class="categorie-item">
-                      <div class="ci-text ">
-
-                        <h6>
-                          {{course.lessonNumber}}-
-                          {{course.lessonName}}
-                        </h6>
-                        <p>Duration: {{course.duration}}</p>
-
+                      <div class="ci-text">
+                        <h3>
+                          Lesson Number {{course.id}}
+                        </h3>
                       </div>
                     </div>
                   </a>
                 </div>
-
               </div>
-
               <div class="col-sm-12 col-md-3">
                 <p style="color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias mollitia dolor minus et explicabo illo, accusamus repellat reprehenderit totam non, doloremque perspiciatis repellendus necessitatibus, iusto eum voluptas ipsum qui? Minima.</p>
               </div>
-
             </div>
-
         </div>
     </section>
     </div>

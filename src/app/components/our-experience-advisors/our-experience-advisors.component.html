@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 pt-5 pb-5 text-center">
             <div>
-                <h1 style="color:#002147">Our Experience Instructors</h1>
+                <h1 style="color:#002147"  class="fs-1 mb-5">Our Experience Instructors</h1>
                 <p class="text-black-50">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scelerisqu Nullam arcu liquam here was consequat.</p>
             </div>
         </div>
@@ -10,8 +10,8 @@
             <div class="card text-center">
                 <img src="http://127.0.0.1:8000/assets/dist/img/User-images/{{Ins.image}}" class="card-img-top">
                 <div class="card-body">
-                  <a [routerLink]="['/instructorDetails',Ins.id]"><h5 class="card-title">{{Ins.username}}</h5></a>
-                  <h6 class="card-text">{{Ins.role|uppercase}}</h6>
+                  <a [routerLink]="['/instructorDetails',Ins.id]"><h2 class="card-title">{{Ins.username}}</h2></a>
+                  <h3 class="card-text fw-light">{{Ins.role|uppercase}}</h3>
                 </div>
             </div>
         </div>

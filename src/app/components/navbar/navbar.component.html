@@ -21,7 +21,7 @@
             <a class="nav-link fs-5" routerLink="/ourCategories" routerLinkActive="active">Courses</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" routerLink="/exam" routerLinkActive="active">Exam</a>
+            <a class="nav-link fs-5"  *ngIf="authService.loggedIn()" routerLinkActive="active" routerLink="/subjects">Courses Exams</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5" routerLink="/contact-us" routerLinkActive="active">Contact</a>

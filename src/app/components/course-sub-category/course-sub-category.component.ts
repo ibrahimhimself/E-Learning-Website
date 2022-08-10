@@ -21,7 +21,7 @@ export class CourseSubCategoryComponent implements OnInit {
     )
   {
     this.catID = this.activeRouter.snapshot.paramMap.get("catID");
-    console.log(this.catID);
+    // console.log(this.catID);
     
   }
 

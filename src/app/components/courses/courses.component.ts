@@ -15,7 +15,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(private categoryService:categoryServiceService , private activateRoute:ActivatedRoute) {
     this.subCatId = this.activateRoute.snapshot.paramMap.get("subCatID");
-    console.log(this.subCatId);
+    // console.log(this.subCatId);
     
   }
 
@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit {
 
     this.categoryService.getCourseBySubCatID(this.subCatId).subscribe(res => {
       this.data = res
-      console.log(res);
+      // console.log(res);
       
     })
   }
