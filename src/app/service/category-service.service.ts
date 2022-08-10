@@ -24,6 +24,10 @@ export class categoryServiceService {
     return this.httpClient.get<IcoursesSubCategories>(`${environment.APIBaseURL}/getCourseBySubCategoryId/${SubCatID}`)
   }
 
+  getCourseContentByCourseID(courceID:number):Observable<IcoursesSubCategories>{
+    return this.httpClient.get<IcoursesSubCategories>(`${environment.APIBaseURL}/courseContent/${courceID}`)
+  }
+
   getAllInstructors(){
     return this.httpClient.get(`${environment.APIBaseURL}/instructors`)
   }

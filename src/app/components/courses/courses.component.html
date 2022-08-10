@@ -4,17 +4,17 @@
       <section class="categories-section spad">
         <div class="container">
             <div class="section-title text-light text-center mb-5">
-                <h2>Our Courses</h2>
+                <h1 class="fs-1 mb-5">Our Courses</h1>
             </div>
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 " *ngFor="let course of data">
                     <div class="categorie-item">
                       <img src="http://127.0.0.1:8000/assets/dist/img/Course-images/{{course.image}}" class="ci-thumb set-bg w-100 ">
                       <div class="ci-text text-center">
-                          <h3>{{course.name}}</h3>
-                          <h5>{{course.price | currency}}</h5>
-                          <h6>{{course.description}}</h6>
-                          <a routerLink="/CourseContent" class="btn btn-outline-primary mt-3">Start Course</a>
+                          <h1>{{course.name | uppercase}}</h1>
+                          <h3>{{course.price | currency}}</h3>
+                          <h4 class="fw-light">{{course.description}}</h4>
+                          <a [routerLink]="['/CourseContent',course.id]" class="btn btn-outline-primary mt-3">Start Course</a>
                       </div>
                   </div>
               </div>
