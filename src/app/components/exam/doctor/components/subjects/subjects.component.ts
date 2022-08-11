@@ -15,19 +15,11 @@ export class SubjectsComponent implements OnInit {
   user:any = {}
   ngOnInit(): void {
     this.getSubjects()
-    this.getUserInfo()
   }
 
   getSubjects() {
     this.service.getAllSubjects().subscribe((res:any) => {
       this.subjects = res
-    })
-  }
-
-
-  getUserInfo() {
-    this.auth.getRole().subscribe(res=> {
-      this.user = res
     })
   }
 

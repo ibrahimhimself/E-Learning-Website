@@ -11,7 +11,9 @@ import { categoryServiceService } from 'src/app/service/category-service.service
 export class CourseContentComponent implements OnInit {
 
   courseID:any ;
-  data:any = [];
+  data:any = [{}];
+  // FeedbackData:any = [];
+  // rateData:any = {};
 
   constructor(private categoryService:categoryServiceService , private activateRoute:ActivatedRoute , public authService:AuthService) {
     
@@ -24,9 +26,21 @@ export class CourseContentComponent implements OnInit {
 
     this.categoryService.getCourseContentByCourseID(this.courseID).subscribe((res:any) => {
       this.data = res.data;
-      console.log(res.data);
+      // console.log(res.data);
       
     })
+
+    // this.categoryService.getFeedBacks(this.courseID).subscribe((res:any) => {
+    //   this.FeedbackData = res.data;
+    //   // console.log(res);
+      
+    // })
+
+    // this.categoryService.getRate(this.courseID).subscribe((res:any) => {
+    //   this.rateData = res.data;
+    //   // console.log(res);
+      
+    // })
   }
 
 }

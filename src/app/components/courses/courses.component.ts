@@ -21,7 +21,7 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.categoryService.getCourseBySubCatID(this.subCatId).subscribe(res => {
+    this.categoryService.getCourseBySubCatID(this.subCatId).subscribe((res: any) => {
       this.data = res
       // console.log(res);
       

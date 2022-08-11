@@ -27,7 +27,7 @@ export class CourseSubCategoryComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.categoryService.getSubCategoryByCatID(this.catID).subscribe(res => {
+    this.categoryService.getSubCategoryByCatID(this.catID).subscribe((res:any) => {
       this.data = res;
     })
 

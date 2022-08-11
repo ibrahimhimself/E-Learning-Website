@@ -28,6 +28,14 @@ export class categoryServiceService {
     return this.httpClient.get<IcoursesSubCategories>(`${environment.APIBaseURL}/courseContent/${courceID}`)
   }
 
+  getFeedBacks(courceID:number):Observable<IcoursesSubCategories>{
+    return this.httpClient.get<IcoursesSubCategories>(`${environment.APIBaseURL}/feedbacks/${courceID}`)
+  }
+
+  getRate(courceID:number):Observable<IcoursesSubCategories>{
+    return this.httpClient.get<IcoursesSubCategories>(`${environment.APIBaseURL}/getRates/${courceID}`)
+  }
+
   getAllInstructors(){
     return this.httpClient.get(`${environment.APIBaseURL}/instructors`)
   }

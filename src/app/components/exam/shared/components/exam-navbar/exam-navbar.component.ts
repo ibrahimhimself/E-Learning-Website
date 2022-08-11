@@ -18,13 +18,4 @@ export class ExamNavbarComponent implements OnInit {
      }
    })
   }
-
-
-  logout() {
-    const model = {}
-    this.service.login(model).subscribe(res => {
-      this.user = null
-      this.service.user.next(res)
-    })
-  }
 }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExamAuthService } from './components/exam/auth/services/examAuth.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,15 +9,8 @@ import { ExamAuthService } from './components/exam/auth/services/examAuth.servic
 export class AppComponent implements OnInit {
   title = 'Final-Project-Angular';
   constructor(private service:ExamAuthService){}
-
+  
   ngOnInit(): void {
-
-    this.getUserData();
   }
 
-  getUserData(){
-    this.service.getRole().subscribe(res => {
-      this.service.user.next(res)
-    }) 
-  }
 }
