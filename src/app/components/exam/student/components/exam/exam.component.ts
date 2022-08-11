@@ -24,6 +24,7 @@ export class ExamComponent implements OnInit {
      private toaster:ToastrService) {
     this.id = this.route.snapshot.paramMap.get('id')
     this.getSubject()
+    this.getLogedInUser()
 
    }
 
@@ -33,6 +34,13 @@ export class ExamComponent implements OnInit {
   getSubject() {
     this.service.getSubject(this.id).subscribe(res => {
       this.subject = res
+    })
+  }
+
+  getLogedInUser() {
+    this.auth.getRole().subscribe(res=> {
+      this.user = res
+      this.getUserData()
     })
   }
 
@@ -92,6 +100,9 @@ export class ExamComponent implements OnInit {
       password: this.studentInfo.password,
       subjects : this.usersubjects
     }
+    this.auth.updateStudent(this.user.userId , model).subscribe(res => {
+      this.toaster.success("The question has been successfully deleted   ")
+    })
     console.log(this.total)
   }
 }

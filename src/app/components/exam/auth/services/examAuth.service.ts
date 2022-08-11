@@ -10,13 +10,13 @@ export class ExamAuthService {
 
   constructor(private http:HttpClient) { }
   user = new Subject()
-  // createUser(model:any) {
-  //   return this.http.post(environment.baseApi+'students' , model)
-  // }
+  createUser(model:any) {
+    return this.http.post(environment.baseApi+'students' , model)
+  }
 
-  // login(model:any) {
-  //   return this.http.put(environment.baseApi+'login/1' , model)
-  // }
+  login(model:any) {
+    return this.http.put(environment.baseApi+'login/1' , model)
+  }
 
   getUsers(type:string){
     return this.http.get(environment.baseApi+type)
@@ -25,10 +25,10 @@ export class ExamAuthService {
   getStudent(id:number) {
     return this.http.get(environment.baseApi+"students/"+id)
   }
-  // updateStudent(id:number , model:any) {
-  //   return this.http.put(environment.baseApi+"students/"+id , model)
-  // }
-  // getRole() {
-  //   return this.http.get(environment.baseApi+'login/1')
-  // }
+  updateStudent(id:number , model:any) {
+    return this.http.put(environment.baseApi+"students/"+id , model)
+  }
+  getRole() {
+    return this.http.get(environment.baseApi+'login/1')
+  }
 }
