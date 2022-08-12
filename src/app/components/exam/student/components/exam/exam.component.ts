@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/service/auth.service';
 import { ExamAuthService } from '../../../auth/services/examAuth.service';
 import { DoctorService } from '../../../doctor/services/doctor.service';
 
@@ -21,7 +22,7 @@ export class ExamComponent implements OnInit {
   usersubjects:any[] = [];
   validExam:boolean = true;
   constructor(private route:ActivatedRoute , private service:DoctorService ,private auth :ExamAuthService,
-     private toaster:ToastrService) {
+     private toaster:ToastrService  ,public authService:AuthService) {
     this.id = this.route.snapshot.paramMap.get('id')
     this.getSubject()
     this.getLogedInUser()

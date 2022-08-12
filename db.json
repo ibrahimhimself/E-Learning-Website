@@ -88,21 +88,6 @@
       "password": "12345",
       "subjects": [
         {
-          "name": "Laravel",
-          "id": "1",
-          "degree": 0
-        },
-        {
-          "name": "Node Js",
-          "id": "4",
-          "degree": 0
-        },
-        {
-          "name": "sql",
-          "id": "6",
-          "degree": 0
-        },
-        {
           "name": "css",
           "id": "3",
           "degree": 2
@@ -236,9 +221,6 @@
   ],
   "login": [
     {
-      "username": "ibrahim",
-      "role": "students",
-      "userId": 7,
       "id": 1
     }
   ]
