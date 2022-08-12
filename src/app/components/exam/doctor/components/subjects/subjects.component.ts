@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/service/auth.service';
 import { ExamAuthService } from '../../../auth/services/examAuth.service';
 import { DoctorService } from '../../services/doctor.service';
 
@@ -10,7 +11,7 @@ import { DoctorService } from '../../services/doctor.service';
 })
 export class SubjectsComponent implements OnInit {
 
-  constructor(private service:DoctorService , private auth:ExamAuthService , private toaster:ToastrService) { }
+  constructor(private service:DoctorService , private auth:ExamAuthService , private toaster:ToastrService , public authService:AuthService) { }
   subjects:any[] = [];
   user:any = {}
   ngOnInit(): void {

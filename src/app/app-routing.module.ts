@@ -15,8 +15,6 @@ import { StudentProfileComponent } from './components/student-profile/student-pr
 import { AuthGuard } from './auth.guard';
 import { MyCoursesComponent } from './components/my-courses/my-courses.component';
 import { InstructorDetailsComponent } from './components/instructor-details/instructor-details.component';
-import { ExamLoginComponent } from './components/exam/auth/components/exam-login/exam-login.component';
-import { ExamRegisterComponent } from './components/exam/auth/components/exam-register/exam-register.component';
 import { ExamComponent } from './components/exam/student/components/exam/exam.component';
 import { StudentsComponent } from './components/exam/doctor/components/students/students.component';
 import { SubjectsComponent } from './components/exam/doctor/components/subjects/subjects.component';
@@ -38,13 +36,10 @@ const routes: Routes = [
       {path:'CourseSubCategory/:catID', component: CourseSubCategoryComponent},
       {path:'myCourses', component: MyCoursesComponent},
       {path:'profile', component: StudentProfileComponent, canActivate:[AuthGuard]},
-      {path:'exam-login' , component:ExamLoginComponent},
-      {path:'exam-register' , component:ExamRegisterComponent},
       {path:'exam/:id' , component:ExamComponent},
       {path:'students' , component:StudentsComponent},
       {path:'subjects' , component:SubjectsComponent},
       {path:'new-exam' , component:NewExamComponent},
-      {path:'exam' , component:ExamRegisterComponent},
       {path:'**', component: NotFoundComponent}, // Wild card
   ];
 @NgModule({

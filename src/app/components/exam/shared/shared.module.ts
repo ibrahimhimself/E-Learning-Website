@@ -6,13 +6,12 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { MatrialModule } from './matrial.module';
-import { ExamNavbarComponent } from './components/exam-navbar/exam-navbar.component';
 
 
 
 @NgModule({
   declarations: [
-    ExamNavbarComponent
+    
   ],
   imports: [
     MatrialModule,
@@ -30,7 +29,6 @@ import { ExamNavbarComponent } from './components/exam-navbar/exam-navbar.compon
     RouterModule,
     MatrialModule,
     CommonModule,
-    ExamNavbarComponent
   ]
 })
 export class SharedModule { }
