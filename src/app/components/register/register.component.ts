@@ -1,9 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -13,25 +11,15 @@ import { ToastrService } from 'ngx-toastr';
 export class RegisterComponent implements OnInit {
 
   userFormGroup!:FormGroup;
-  students:any[] = [];
-  private httpOptions = {};
+  // students:any[] = [];
 
   constructor
   (
     private fb : FormBuilder ,
-    private http:HttpClient ,
     private router:Router ,
     private AuthService:AuthService,
-    private toster:ToastrService
   )
-  {
-    this.httpOptions={
-      headers:new HttpHeaders({
-        'Content-Type': 'application/json'
-
-      })
-    };
-  }
+  {}
 
   get first_name(){
     return this.userFormGroup.get('first_name');

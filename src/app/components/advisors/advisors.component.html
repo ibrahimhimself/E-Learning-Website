@@ -3,7 +3,7 @@
         <div class="carousel-item active">
         <img src="assets/images/header/2.jpg" class="d-block w-100">
         <div class="carousel-caption pb-5">
-            <h1 class=" fw-bolder fs-1 mb-5">Become a Advisors</h1>
+            <h1 class=" fw-bolder fs-1 mb-5">Become a Instructor</h1>
         </div>
         </div>
     </div>
@@ -12,26 +12,37 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-12 text-center">
-            <h2 class="fw-bolder fs-3" style="color: #002147;">Become a Advisor</h2>
+            <h1 class="fw-bolder fs-1" style="color: #002147;">Become a Instructor</h1>
             <p class="text-secondary fs-6 m-auto w-50">Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis scelerisqu Nullam arcu liquam here was consequat.</p>
         </div>
-        <div class="col-12 col-md-6 mt-5">
-            <input class=" form-control" type="text" name="Name" id="Name" placeholder="Name:">
-        </div>
-        <div class="col-12 col-md-6 mt-5">
-            <input class=" form-control" type="email" name="Email" id="Email" placeholder="Email:">
-        </div>
-        <div class="col-12 col-md-6 mt-2">
-            <input class=" form-control" type="text" name="Subject" id="Subject" placeholder="Subject:">
-        </div>
-        <div class="col-12 col-md-6 mt-2">
-            <input class=" form-control" type="text" name="Experiance" id="Experiance" placeholder="Experiance:">
-        </div>
-        <div class="col-12 mt-2">
-            <textarea class="form-control" cols="30" rows="10" placeholder="Message :"></textarea>
-        </div>
-        <div class="col-12 mt-2">
-            <button class="btn btn-warning">Send</button>
-        </div>
+        <form [formGroup]="instructorFormGroup" (submit)="submit()">
+            <div class="col-12 col-12 mt-5">
+                <input class=" form-control" type="text" name="first_name" id="first_name" formControlName="first_name" placeholder="First Name:">
+            </div>
+            <div class="col-12 col-12 mt-3">
+                <input class=" form-control" type="text" name="last_name" id="last_name" formControlName="last_name" placeholder="Last Name:">
+            </div>
+            <div class="col-12 col-12 mt-3">
+                <input class=" form-control" type="text" name="username" id="username" formControlName="username" placeholder="Username:">
+            </div>
+            <div class="col-12 col-12 mt-3">
+                <input class=" form-control" type="email" name="email" id="email" formControlName="email" placeholder="Email:">
+            </div>
+            <div class="col-12 col-12 mt-3">
+                <input class=" form-control" type="number" name="password" id="password" formControlName="password" placeholder="Password:">
+            </div>
+            <div class="col-12 col-12 mt-3">
+                <input class=" form-control" type="text" name="scientific_degree" formControlName="scientific_degree" id="scientific_degree" placeholder="scientific_degree:">
+            </div>
+            <div class="col-12 col-12 mt-3">
+                <input class=" form-control" type="text" name="phone" id="phone" formControlName="phone" placeholder="phone:">
+            </div>
+            <div class="col-12 mt-3">
+                <textarea class="form-control" cols="30" rows="10" name="description" formControlName="description" id="description" placeholder="Description :"></textarea>
+            </div>
+            <div class="col-12 mt-3">
+                <button class="btn btn-warning" [disabled]="instructorFormGroup.invalid">Send</button>
+            </div>
+        </form>
     </div>
 </div>

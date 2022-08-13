@@ -16,6 +16,10 @@ export class AuthService {
   createUserStudent(model:any){
     return this.http.post<any>(`${environment.APIBaseURL}/student/create` , model , {withCredentials:true});
   }
+
+  becomeInstructor(model:any){
+    return this.http.post<any>(`${environment.APIBaseURL}/instructors` , model , {withCredentials:true});
+  }
   
   login(model:any){
     return this.http.post<any>(`${environment.APIBaseURL}/student/login` , model , {withCredentials:true});
