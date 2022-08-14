@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-<<<<<<< HEAD
-
-=======
->>>>>>> ibrahim
 import { SharedModule } from '../shared/shared.module';
 
 

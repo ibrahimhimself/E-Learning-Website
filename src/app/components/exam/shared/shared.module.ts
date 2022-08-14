@@ -11,11 +11,6 @@ import { MatrialModule } from './matrial.module';
 
 @NgModule({
   declarations: [
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> ibrahim
   ],
   imports: [
     MatrialModule,
