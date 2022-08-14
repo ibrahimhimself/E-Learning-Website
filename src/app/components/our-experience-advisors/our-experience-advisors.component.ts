@@ -14,7 +14,7 @@ export class OurExperienceAdvisorsComponent implements OnInit {
   ngOnInit(): void {
     this.categoryService.getAllInstructors().subscribe((advList:any) => {
       this.advisorsList = advList.data;
-      console.log(advList.data);
+      // console.log(advList.data);
     })
   }
 }
