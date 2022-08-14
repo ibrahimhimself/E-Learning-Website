@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/service/auth.service';
 export class AdvisorsComponent implements OnInit {
 
   instructorFormGroup!:FormGroup;
+  Message:any = '';
 
   constructor(
     private fb : FormBuilder,
@@ -58,8 +59,9 @@ export class AdvisorsComponent implements OnInit {
 
   submit(){
     this.authService.becomeInstructor(this.instructorFormGroup.getRawValue()).subscribe((res:any) => {
+      // this.router.navigate(['home']);
       console.log(res);
-      
+      this.Message = res.message;
     })
   }
 }

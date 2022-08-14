@@ -29,7 +29,7 @@
                 <input class=" form-control" type="email" name="email" id="email" formControlName="email" placeholder="Email:">
             </div>
             <div class="col-12 col-12 mt-3">
-                <input class=" form-control" type="number" name="password" id="password" formControlName="password" placeholder="Password:">
+                <input class=" form-control" type="password" name="password" id="password" formControlName="password" placeholder="Password:">
             </div>
             <div class="col-12 col-12 mt-3">
                 <input class=" form-control" type="text" name="scientific_degree" formControlName="scientific_degree" id="scientific_degree" placeholder="scientific_degree:">
@@ -44,5 +44,6 @@
                 <button class="btn btn-warning" [disabled]="instructorFormGroup.invalid">Send</button>
             </div>
         </form>
+        <h1 class="alert alert-warning mt-5">{{Message}}</h1>
     </div>
 </div>

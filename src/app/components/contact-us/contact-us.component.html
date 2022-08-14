@@ -5,36 +5,40 @@
           <div class="col-md-8">
             <div class="form h-100">
               <h3>Send us a message</h3>
-              <form class="mb-5" method="post" id="contactForm" name="contactForm">
+              <form class="mb-5" [formGroup]="contactFormGroup" (submit)="submit()">
                 <div class="row">
                   <div class="col-md-6 form-group mb-5">
-                    <label for="" class="col-form-label">Name *</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+                    <label for="name" class="col-form-label">Name *</label>
+                    <input type="text" class="form-control" formControlName="name" name="name" id="name" placeholder="Your Name">
                   </div>
                   <div class="col-md-6 form-group mb-5">
-                    <label for="" class="col-form-label">Email *</label>
-                    <input type="text" class="form-control" name="email" id="email"  placeholder="Your email">
+                    <label for="email" class="col-form-label">Email *</label>
+                    <input type="text" class="form-control" name="email" id="email" formControlName="email" placeholder="Your Email">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group mb-5">
+                    <label for="phone" class="col-form-label">Phone *</label>
+                    <input type="number" class="form-control" formControlName="phone" name="phone" id="phone" placeholder="Your Phone">
+                  </div>
+                  <div class="col-md-6 form-group mb-5">
+                    <label for="subject" class="col-form-label">Subject *</label>
+                    <input type="text" class="form-control" name="subject" id="subject" formControlName="subject" placeholder="Your Subject">
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12 form-group mb-5">
                     <label for="message" class="col-form-label">Message *</label>
-                    <textarea class="form-control" name="message" id="message" cols="30" rows="4"  placeholder="Write your message"></textarea>
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="4" formControlName="message" placeholder="Write your message"></textarea>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12 form-group">
-                    <input type="submit" value="Send Message" class="btn btn-warning rounded-3 py-2 px-4">
-                    <span class="submitting"></span>
+                    <input type="submit" value="Send Message" [disabled]="contactFormGroup.invalid" class="btn btn-warning rounded-3 py-2 px-4">
                   </div>
                 </div>
               </form>
-  
-              <div id="form-message-warning mt-4"></div> 
-              <div id="form-message-success">
-                Your message was sent, thank you!
-              </div>
-  
+              <h1 class="alert alert-primary">{{Message}}</h1>
             </div>
           </div>
           <div class="col-md-4">

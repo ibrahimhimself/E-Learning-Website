@@ -20,6 +20,10 @@ export class AuthService {
   becomeInstructor(model:any){
     return this.http.post<any>(`${environment.APIBaseURL}/instructors` , model , {withCredentials:true});
   }
+
+  contact(model:any){
+    return this.http.post<any>(`${environment.APIBaseURL}/contact-form` , model , {withCredentials:true});
+  }
   
   login(model:any){
     return this.http.post<any>(`${environment.APIBaseURL}/student/login` , model , {withCredentials:true});

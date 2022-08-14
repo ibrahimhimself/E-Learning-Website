@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/service/auth.service';
 export class RegisterComponent implements OnInit {
 
   userFormGroup!:FormGroup;
-  // students:any[] = [];
 
   constructor
   (
